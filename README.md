@@ -200,6 +200,4 @@ tail -50 application.log
 - **Visibility:** Public
 - **All sections completed:** Section 1 ✅ | Section 2 ✅ | Section 3 ✅ | Section 4 ✅
 
----
-
-*Submitted as part of Full Stack Development placement training – Green Technology*
+--
