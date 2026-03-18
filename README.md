@@ -1,4 +1,4 @@
-#  🐧 Linux Basic Assignment - JANANI B
+#   Linux Basic Assignment - JANANI B
 
 > **Student:** Janani B | **College:** New Prince Shri Bhavani College of Engineering and Technology
 > **Program:** Full Stack Development | **Repo:** `linux-basic-assignment-janani B`
