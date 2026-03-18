@@ -1,19 +1,6 @@
 #   Linux Basic Assignment - JANANI B
 
-> **Student:** Janani B | **College:** New Prince Shri Bhavani College of Engineering and Technology
-> **Program:** Full Stack Development | **Repo:** `linux-basic-assignment-janani B`
-
----
-
-## 📋 Table of Contents
-- [Section 1 – Command Purpose & Examples](#section-1--command-purpose--examples)
-- [Section 2 – Linux Commands for Tasks](#section-2--linux-commands-for-tasks)
-- [Section 3 – Concept Questions](#section-3--concept-questions)
-- [Section 4 – Scenario Based Questions](#section-4--scenario-based-questions)
-
----
-
-## 📌 Section 1 – Command Purpose & Examples
+## Section 1 – Command Purpose & Examples
 
 | # | Command | Purpose | Example |
 |---|---------|---------|---------|
@@ -30,7 +17,7 @@
 
 ---
 
-## 📌 Section 2 – Linux Commands for Tasks
+##  Section 2 – Linux Commands for Tasks
 
 **1. Create a directory called `project-files`**
 ```bash
@@ -85,7 +72,7 @@ rm temp.txt
 
 ---
 
-## 📌 Section 3 – Concept Questions
+## Section 3 – Concept Questions
 
 ### Q1. What is the difference between `>` and `>>` in Linux?
 
@@ -152,7 +139,7 @@ ping google.com
 
 ---
 
-## 📌 Section 4 – Scenario Based Questions
+## Section 4 – Scenario Based Questions
 
 ### Q1. Check the current working directory
 ```bash
@@ -192,12 +179,5 @@ ping google.com
 tail -50 application.log
 ```
 
----
-
-## ✅ Submission Info
-
-- **GitHub Repo:** `linux-basic-assignment-janani B`
-- **Visibility:** Public
-- **All sections completed:** Section 1 ✅ | Section 2 ✅ | Section 3 ✅ | Section 4 ✅
 
 
