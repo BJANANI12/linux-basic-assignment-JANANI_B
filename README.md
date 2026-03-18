@@ -1,72 +1,104 @@
-#   Linux Basic Assignment - JANANI B
+# Linux Basic Assignment
 
-## Section 1 – Command Purpose & Examples
-
-| # | Command | Purpose | Example |
-|---|---------|---------|---------|
-| 1 | `pwd` | Print Working Directory — shows current location in file system | `pwd` → `/home/janu` |
-| 2 | `ls` | List all files and folders in the current directory | `ls` → files list \| `ls -l` → detailed |
-| 3 | `cd` | Change Directory — navigate into a folder | `cd /home/janu/projects` \| `cd ..` → go back |
-| 4 | `mkdir` | Make Directory — creates a new folder | `mkdir project-files` |
-| 5 | `rm -rf` | Remove files/folders forcefully & recursively ⚠️ permanent | `rm -rf old-project` |
-| 6 | `ps -ef` | Shows all running processes with full details (PID, user, command) | `ps -ef` |
-| 7 | `top` | Real-time display of processes, CPU & memory usage | `top` → press `q` to quit |
-| 8 | `df -h` | Disk Free — shows disk storage usage in human-readable format | `df -h` → used/free per partition |
-| 9 | `history` | Shows list of all previously typed commands in terminal | `history` → last 500 commands |
-| 10 | `uptime` | Shows how long server has been running + CPU load average | `uptime` → `up 5 days, load: 0.10` |
+**Name:** Janani B  
+**Repo:** linux-basic-assignment-janu
 
 ---
 
-##  Section 2 – Linux Commands for Tasks
+## Section 1 – Command Purpose and Example
 
-**1. Create a directory called `project-files`**
-```bash
+**1. pwd**  
+Shows where you are currently in the file system (current directory path).  
+Example: `pwd` → output will be something like `/home/janani`
+
+**2. ls**  
+Lists all files and folders in the current directory.  
+Example: `ls` → shows files, `ls -l` → shows files with details like size and date
+
+**3. cd**  
+Used to move from one folder to another.  
+Example: `cd /home/janani/projects` → goes into that folder, `cd ..` → goes back one level
+
+**4. mkdir**  
+Creates a new folder.  
+Example: `mkdir project-files` → creates a folder called project-files
+
+**5. rm -rf**  
+Deletes a file or folder permanently. Be careful — there is no undo!  
+Example: `rm -rf old-project` → deletes the old-project folder and everything inside it
+
+**6. ps -ef**  
+Shows all the processes currently running on the system with details like process ID and user.  
+Example: `ps -ef` → lists all running processes
+
+**7. top**  
+Shows real time view of running processes and how much CPU and memory each one is using.  
+Example: `top` → opens live monitor, press `q` to quit
+
+**8. df -h**  
+Shows how much disk space is used and available on the server in a readable format like GB or MB.  
+Example: `df -h` → shows disk usage for all partitions
+
+**9. history**  
+Shows a list of all commands you typed before in the terminal.  
+Example: `history` → shows last 500 commands with line numbers
+
+**10. uptime**  
+Shows how long the server has been running and the current load on the CPU.  
+Example: `uptime` → output like `10:30 up 5 days, 2 users, load: 0.10`
+
+---
+
+## Section 2 – Write the Linux Command
+
+**1. Create a directory called project-files**
+```
 mkdir project-files
 ```
 
-**2. Navigate into the `project-files` directory**
-```bash
+**2. Navigate into the project-files directory**
+```
 cd project-files
 ```
 
-**3. Create a file called `notes.txt` using vi**
-```bash
+**3. Create a file called notes.txt using vi**
+```
 vi notes.txt
 ```
-> Press `i` → type content → press `Esc` → type `:wq` → press `Enter` to save and exit.
+Press `i` to start typing, press `Esc` when done, then type `:wq` and press Enter to save and exit.
 
-**4. Display the contents of `notes.txt`**
-```bash
+**4. Display the contents of notes.txt**
+```
 cat notes.txt
 ```
 
-**5. Copy `notes.txt` to `backup.txt`**
-```bash
+**5. Copy notes.txt to backup.txt**
+```
 cp notes.txt backup.txt
 ```
 
-**6. Show the first 100 lines of `logs.txt`**
-```bash
+**6. Show the first 100 lines of a file called logs.txt**
+```
 head -100 logs.txt
 ```
 
-**7. Show the last 100 lines of `logs.txt`**
-```bash
+**7. Show the last 100 lines of logs.txt**
+```
 tail -100 logs.txt
 ```
 
 **8. Check the disk storage usage of the server**
-```bash
+```
 df -h
 ```
 
 **9. Check the running processes in the system**
-```bash
+```
 ps -ef
 ```
 
-**10. Delete a file called `temp.txt`**
-```bash
+**10. Delete a file called temp.txt**
+```
 rm temp.txt
 ```
 
@@ -74,110 +106,117 @@ rm temp.txt
 
 ## Section 3 – Concept Questions
 
-### Q1. What is the difference between `>` and `>>` in Linux?
+**1. What is the difference between > and >> in Linux?**
 
-| Symbol | Meaning | Example |
-|--------|---------|---------|
-| `>` | **Overwrites** the file completely | `echo "Hello" > file.txt` → replaces all content |
-| `>>` | **Appends** to the end of the file | `echo "Hello" >> file.txt` → adds to end |
+`>` overwrites the file completely. If the file has content, it will be replaced.  
+`>>` adds to the end of the file without deleting existing content.
 
-> 💡 **Note:** If the file does not exist, both `>` and `>>` will **create** it automatically.
+Example:
+```
+echo "Hello" > file.txt    # replaces everything in file.txt
+echo "Hello" >> file.txt   # adds Hello to the end of file.txt
+```
+
+Note: if the file does not exist, both `>` and `>>` will create it automatically.
 
 ---
 
-### Q2. What is the purpose of the `kill -9` command?
+**2. What is the purpose of the kill -9 command?**
 
-- `kill -9 <PID>` **forcefully terminates** a process immediately.
-- `-9` is the **SIGKILL** signal — the process **cannot ignore** or block it.
-- First use `ps -ef` to find the PID, then kill it:
+`kill -9` is used to forcefully stop a running process immediately. The -9 sends a SIGKILL signal which the process cannot ignore or block.
 
-```bash
-ps -ef | grep myapp     # find the PID
-kill -9 1234            # forcefully kill it
+First find the process ID using `ps -ef`, then kill it:
+```
+ps -ef | grep myapp
+kill -9 1234
 ```
 
 ---
 
-### Q3. What is the difference between `rm` and `rmdir`?
+**3. What is the difference between rm and rmdir?**
 
-| Command | Use | Example |
-|---------|-----|---------|
-| `rm` | Deletes **files**. Use `rm -rf` for folders with content | `rm temp.txt` \| `rm -rf myfolder` |
-| `rmdir` | Deletes **only empty** directories. Fails if folder has files | `rmdir myfolder` *(only if empty)* |
+`rm` is used to delete files. If you want to delete a folder with files inside, use `rm -rf`.  
+`rmdir` only works on empty folders. If the folder has any files inside, it will give an error.
 
----
-
-### Q4. What information does `netstat -tulpn` provide?
-
-Shows all **open network ports** and the **services listening** on them.
-
-| Flag | Meaning |
-|------|---------|
-| `t` | TCP connections |
-| `u` | UDP connections |
-| `l` | Listening ports only |
-| `p` | Process name and PID |
-| `n` | IP addresses as numbers (not hostnames) |
-
-```bash
-netstat -tulpn | grep 8080    # check if Spring Boot is running on port 8080
+Example:
+```
+rm temp.txt           # deletes a file
+rmdir myfolder        # deletes folder only if it is empty
+rm -rf myfolder       # deletes folder even if it has files
 ```
 
 ---
 
-### Q5. What is the purpose of the `ping` command?
+**4. What information does the netstat -tulpn command provide?**
 
-- Tests **network connectivity** between your system and another host.
-- Sends **ICMP packets** and waits for a reply.
+It shows all the open network ports on the server and which service or program is listening on each port.
 
-```bash
+- t → shows TCP connections
+- u → shows UDP connections
+- l → shows only listening ports
+- p → shows the program name and process ID
+- n → shows IP addresses as numbers instead of names
+
+Example use case: check if Spring Boot app is running on port 8080
+```
+netstat -tulpn | grep 8080
+```
+
+---
+
+**5. What is the purpose of the ping command?**
+
+`ping` is used to check if your server can reach another server or website over the network. It sends small packets and waits for a reply.
+
+```
 ping google.com
 ```
 
-- ✅ **Replies received** → Network is working
-- ❌ **Request timeout** → Network issue or host unreachable
+If you get replies back → network is working fine  
+If you get request timeout → network issue or the server is unreachable
 
 ---
 
 ## Section 4 – Scenario Based Questions
 
-### Q1. Check the current working directory
-```bash
+**1. You want to check the current working directory. Which command will you use?**
+```
 pwd
 ```
 
 ---
 
-### Q2. Create a directory called `devops` inside the home directory
-```bash
+**2. You want to create a directory called devops inside the home directory. Write the command.**
+```
 mkdir /home/devops
 ```
-> Or if you are already inside the home directory:
-```bash
+Or if you are already inside the home directory:
+```
 mkdir devops
 ```
 
 ---
 
-### Q3. Check which process is using high CPU
-```bash
+**3. You want to check which process is using high CPU in the system. Which command will help?**
+```
 top
 ```
-> `top` shows real-time CPU & memory usage. Press `P` to sort by CPU usage — highest CPU process appears at the top.
+Once top is open, press `P` to sort by CPU usage. The process using the most CPU will appear at the top.
 
 ---
 
-### Q4. Check whether your server can connect to `google.com`
-```bash
+**4. You want to check whether your server can connect to google.com. Which command will you use?**
+```
 ping google.com
 ```
 
 ---
 
-### Q5. View the last 50 lines of `application.log`
-```bash
+**5. You want to view the last 50 lines of a log file called application.log. Write the command.**
+```
 tail -50 application.log
 ```
 
+---
 
 
